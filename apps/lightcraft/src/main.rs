@@ -805,6 +805,7 @@ fn main() -> eframe::Result {
             // Wayland matches the window to packaging/linux/ai.storyteller.lightcraft.desktop by this id
             .with_app_id(APP_ID),
         wgpu_options,
+        persistence_path: config_dir().map(|d| d.join("ui.ron")),
         ..Default::default()
     };
     // the app's copy: `log_file` is still named in the message of a start that fails
